@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Convite — Inauguração Agro MT Drones CPN</title>
+<meta property="og:title" content="Você é nosso convidado! — Inauguração Agro MT Drones CPN">
+<meta property="og:description" content="Inauguração da mais nova revenda Agro MT Drones • 29/07 • Campo Novo do Parecis - MT. Confirme sua presença.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-900:#052e16;   /* preto-esverdeado (títulos / rodapé) */
+    --verde-700:#15803d;   /* verde institucional */
+    --verde-500:#16a34a;   /* verde principal (botões) */
+    --verde-400:#22c55e;   /* hover */
+    --verde-100:#dcfce7;   /* fundos suaves */
+    --lime:#4ade80;        /* acento tecnológico */
+    --preto:#0a0f0c;
+    --branco:#ffffff;
+    --cinza:#f4f8f5;
+    --texto:#1c2620;
+    --texto-suave:#5b6b61;
+    --radius:20px;
+    --sombra:0 18px 50px -18px rgba(5,46,22,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:
+      radial-gradient(1200px 500px at 50% -100px, rgba(74,222,128,.12), transparent 60%),
+      var(--cinza);
+    color:var(--texto);
+    -webkit-font-smoothing:antialiased;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+  }
+  /* ===== Cartão do convite (proporção 1080x1350 no desktop, fluido no celular) ===== */
+  .convite{
+    width:100%;
+    max-width:540px;                 /* 1080/2 — lê como o convite 4:5 */
+    background:var(--branco);
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--sombra);
+  }
+  @media (min-width:600px){
+    body{padding:32px 16px}
+    .convite{border-radius:28px}
+  }
+
+  /* ===== Textura de circuito discreta ===== */
+  .circuito{
+    position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%2316a34a' stroke-opacity='.07' stroke-width='1.4'%3E%3Cpath d='M20 20h60v40h50'/%3E%3Cpath d='M200 200h-60v-40h-50'/%3E%3Cpath d='M20 180v-60h40'/%3E%3Ccircle cx='130' cy='60' r='3'/%3E%3Ccircle cx='90' cy='160' r='3'/%3E%3Ccircle cx='60' cy='120' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ===== Topo ===== */
+  .topo{
+    position:relative;
+    padding:34px 28px 0;
+    text-align:center;
+  }
+  .marca{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    color:var(--verde-900);letter-spacing:.02em;font-size:15px;
+  }
+  .marca .ponto{width:8px;height:8px;border-radius:50%;background:var(--verde-500);box-shadow:0 0 0 4px var(--verde-100)}
+  /* ===================================================================
+     [SEU LOGO AQUI] — troque o bloco .marca acima por:
+     <img src="logo.webp" alt="Agro MT Drones" style="height:44px">
+     =================================================================== */
+
+  .eyebrow{
+    margin-top:26px;
+    display:inline-block;
+    font-size:12px;font-weight:700;letter-spacing:.32em;
+    color:var(--verde-700);text-transform:uppercase;
+    padding:9px 16px;border:1px solid var(--verde-100);
+    border-radius:999px;background:rgba(220,252,231,.45);
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    margin-top:18px;
+    font-size:clamp(30px,8vw,42px);
+    line-height:1.06;letter-spacing:-.02em;
+    color:var(--verde-900);text-transform:uppercase;font-weight:700;
+  }
+  h1 .destaque{
+    display:block;
+    background:linear-gradient(90deg,var(--verde-700),var(--verde-500) 55%,var(--lime));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .subtitulo{
+    margin:14px auto 0;max-width:38ch;
+    color:var(--texto-suave);font-size:15px;line-height:1.55;
+  }
+
+  /* ===== Cena do drone ===== */
+  .cena{
+    position:relative;margin-top:26px;height:300px;overflow:hidden;
+  }
+  .lavoura{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.1) 34%, rgba(255,255,255,0) 60%),
+      linear-gradient(180deg, transparent 55%, rgba(5,46,22,.55) 100%),
+      repeating-linear-gradient(100deg, #1c7a3c 0 26px, #2f9a52 26px 52px, #23854420 52px 54px),
+      linear-gradient(180deg,#9fd8b4 0%, #35914f 45%, #14532d 100%);
+    filter:blur(2.5px) saturate(1.05);
+    transform:scale(1.06);
+  }
+  /* ===================================================================
+     [FOTO REAL DO DRONE AQUI]
+     Para usar uma foto real (ex.: DJI Agras T50 sobre a lavoura),
+     substitua a div .lavoura por:
+     <img class="lavoura-foto" src="drone-lavoura.jpg" alt="">
+     e apague o SVG .drone abaixo. O CSS .lavoura-foto já está pronto.
+     =================================================================== */
+  .lavoura-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  .scan{
+    position:absolute;left:8%;right:8%;top:58%;height:2px;
+    background:linear-gradient(90deg,transparent,var(--lime),transparent);
+    opacity:.85;animation:scan 4.5s ease-in-out infinite;
+  }
+  @keyframes scan{0%,100%{transform:translateY(-26px);opacity:0}12%{opacity:.9}50%{transform:translateY(30px)}88%{opacity:.9}}
+
+  .drone{
+    position:absolute;left:50%;top:34%;width:min(340px,78%);
+    transform:translateX(-50%);
+    filter:drop-shadow(0 26px 22px rgba(5,46,22,.4));
+    animation:flutuar 5s ease-in-out infinite;
+  }
+  @keyframes flutuar{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+  .helice{transform-origin:center;animation:girar .18s linear infinite}
+  @media (prefers-reduced-motion:reduce){
+    .drone,.scan,.helice{animation:none}
+  }
+  @keyframes girar{to{transform:rotate(360deg)}}
+
+  /* ===== Faixa de detalhes ===== */
+  .detalhes{
+    position:relative;
+    background:linear-gradient(180deg,var(--verde-900),#04230f);
+    color:var(--branco);
+    padding:26px 24px 30px;
+  }
+  .detalhes::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:3px;
+    background:linear-gradient(90deg,var(--verde-500),var(--lime),var(--verde-500));
+  }
+  .grade{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  .item{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(74,222,128,.18);
+    border-radius:16px;padding:14px 16px;
+  }
+  .item.full{grid-column:1/-1}
+  .item .rotulo{
+    font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--lime);margin-bottom:6px;
+  }
+  .item .valor{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;
+    font-size:17px;line-height:1.3;
+  }
+  .item .valor small{display:block;font-family:'Inter';font-weight:400;font-size:13px;color:rgba(255,255,255,.65);margin-top:3px}
+  .mapa-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+    color:var(--lime);font-size:13px;font-weight:600;text-decoration:none;
+  }
+  .mapa-link:active{opacity:.7}
+
+  /* ===== Contagem regressiva ===== */
+  .contagem{display:flex;gap:10px;justify-content:center;margin-top:18px}
+  .bloco-tempo{
+    min-width:64px;text-align:center;
+    background:rgba(255,255,255,.06);border:1px solid rgba(74,222,128,.2);
+    border-radius:14px;padding:10px 8px;
+  }
+  .bloco-tempo b{font-family:'Space Grotesk';font-size:24px;font-weight:700;color:#fff;display:block;font-variant-numeric:tabular-nums}
+  .bloco-tempo span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+  /* ===== Confirmação ===== */
+  .rsvp{
+    position:relative;padding:32px 24px 36px;background:var(--branco);
+  }
+  .rsvp h2{
+    font-family:'Space Grotesk',sans-serif;color:var(--verde-900);
+    font-size:24px;letter-spacing:-.01em;text-align:center;
+  }
+  .rsvp p.apoio{text-align:center;color:var(--texto-suave);font-size:14px;margin:8px auto 22px;max-width:34ch;line-height:1.5}
+  .campo{margin-bottom:14px}
+  .campo label{
+    display:block;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--verde-700);margin-bottom:7px;
+  }
+  .campo input{
+    width:100%;font:inherit;font-size:16px;   /* 16px evita zoom no iOS */
+    padding:16px 16px;border-radius:14px;
+    border:1.6px solid #dbe6de;background:var(--cinza);
+    color:var(--texto);outline:none;
+    transition:border-color .2s, box-shadow .2s, background .2s;
+  }
+  .campo input:focus{
+    border-color:var(--verde-500);background:#fff;
+    box-shadow:0 0 0 4px rgba(22,163,74,.14);
+  }
+  .campo input.erro{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.1)}
+  .msg-erro{display:none;font-size:12.5px;color:#dc2626;margin-top:6px;font-weight:500}
+  .campo.invalido .msg-erro{display:block}
+
+  .btn-zap{
+    width:100%;border:0;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font:inherit;font-weight:800;font-size:16.5px;letter-spacing:.01em;
+    color:#fff;padding:18px;border-radius:16px;margin-top:8px;
+    background:linear-gradient(135deg,var(--verde-700),var(--verde-500));
+    box-shadow:0 14px 30px -10px rgba(22,163,74,.55);
+    transition:transform .15s, box-shadow .2s, filter .2s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn-zap:active{transform:scale(.98)}
+  .btn-zap:disabled{filter:grayscale(.4) opacity(.7);cursor:not-allowed}
+  .btn-zap svg{flex:none}
+  .nota{
+    text-align:center;font-size:12.5px;color:var(--texto-suave);
+    margin-top:14px;line-height:1.5;
+  }
+  .sucesso{
+    display:none;margin-top:16px;text-align:center;
+    background:var(--verde-100);border:1px solid #86efac;
+    color:var(--verde-900);border-radius:14px;padding:14px;font-size:14px;font-weight:600;
+  }
+  .sucesso.on{display:block;animation:pop .35s ease}
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+
+  /* ===== Rodapé ===== */
+  .rodape{
+    background:var(--verde-900);color:rgba(255,255,255,.55);
+    text-align:center;font-size:12px;padding:18px 24px 26px;
+  }
+  .rodape b{color:var(--lime);font-weight:700}
+</style>
+</head>
+<body>
+
+<main class="convite">
+  <div class="circuito" aria-hidden="true"></div>
+
+  <!-- ================= TOPO ================= -->
+  <header class="topo">
+    <div class="marca"><span class="ponto"></span> AGRO MT DRONES</div>
+
+    <div class="eyebrow">Você é nosso convidado!</div>
+
+    <h1>Inauguração da mais nova revenda
+      <span class="destaque">Agro MT Drones</span>
+    </h1>
+
+    <p class="subtitulo">Tecnologia de pulverização agrícola de alta precisão chegando a Campo Novo do Parecis.</p>
+  </header>
+
+  <!-- ================= CENA DO DRONE ================= -->
+  <section class="cena" aria-hidden="true">
+    <div class="lavoura"></div>
+    <div class="scan"></div>
+
+    <!-- Ilustração do drone agrícola (substituível por foto real — ver comentário no CSS) -->
+    <svg class="drone" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="corpo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2b3530"/><stop offset=".5" stop-color="#121a15"/><stop offset="1" stop-color="#05080a"/>
+        </linearGradient>
+        <linearGradient id="tanque" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f5faf6"/><stop offset="1" stop-color="#c9d6cd"/>
+        </linearGradient>
+        <radialGradient id="brilho" cx=".5" cy=".35" r=".7">
+          <stop offset="0" stop-color="#ffffff" stop-opacity=".8"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- braços -->
+      <path d="M180 92 L60 52 M180 92 L300 52 M180 100 L52 132 M180 100 L308 132" stroke="#1a231d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M180 92 L60 52 M180 92 L300 52" stroke="#3a4a40" stroke-width="2" stroke-linecap="round"/>
+      <!-- motores -->
+      <g fill="#0d1410">
+        <rect x="48" y="42" width="24" height="14" rx="5"/><rect x="288" y="42" width="24" height="14" rx="5"/>
+        <rect x="40" y="122" width="24" height="14" rx="5"/><rect x="296" y="122" width="24" height="14" rx="5"/>
+      </g>
+      <!-- hélices -->
+      <g stroke="#22c55e" stroke-width="3" stroke-linecap="round" opacity=".9">
+        <line class="helice" x1="18" y1="44" x2="102" y2="44"/>
+        <line class="helice" x1="258" y1="44" x2="342" y2="44"/>
+        <line class="helice" x1="10" y1="124" x2="94" y2="124"/>
+        <line class="helice" x1="266" y1="124" x2="350" y2="124"/>
+      </g>
+      <g stroke="#dcfce7" stroke-width="1.4" opacity=".55">
+        <ellipse cx="60" cy="44" rx="46" ry="6" fill="none"/>
+        <ellipse cx="300" cy="44" rx="46" ry="6" fill="none"/>
+        <ellipse cx="52" cy="124" rx="46" ry="6" fill="none"/>
+        <ellipse cx="308" cy="124" rx="46" ry="6" fill="none"/>
+      </g>
+      <!-- tanque -->
+      <ellipse cx="180" cy="118" rx="46" ry="30" fill="url(#tanque)" stroke="#9fb3a6" stroke-width="1.5"/>
+      <ellipse cx="180" cy="112" rx="34" ry="16" fill="url(#brilho)"/>
+      <!-- corpo -->
+      <rect x="138" y="72" width="84" height="34" rx="14" fill="url(#corpo)"/>
+      <rect x="150" y="79" width="60" height="8" rx="4" fill="#16a34a" opacity=".85"/>
+      <circle cx="180" cy="96" r="4" fill="#4ade80"/>
+      <!-- bicos de pulverização -->
+      <g stroke="#16a34a" stroke-width="2.4" stroke-linecap="round">
+        <line x1="120" y1="150" x2="120" y2="162"/><line x1="160" y1="156" x2="160" y2="168"/>
+        <line x1="200" y1="156" x2="200" y2="168"/><line x1="240" y1="150" x2="240" y2="162"/>
+      </g>
+      <!-- névoa de pulverização -->
+      <g fill="#4ade80" opacity=".35">
+        <ellipse cx="120" cy="176" rx="16" ry="5"/><ellipse cx="160" cy="182" rx="18" ry="5"/>
+        <ellipse cx="200" cy="182" rx="18" ry="5"/><ellipse cx="240" cy="176" rx="16" ry="5"/>
+      </g>
+    </svg>
+  </section>
+
+  <!-- ================= DETALHES ================= -->
+  <section class="detalhes">
+    <div class="grade">
+      <div class="item">
+        <div class="rotulo">Data</div>
+        <div class="valor">29 de julho<small>terça-feira</small></div>
+      </div>
+      <div class="item">
+        <div class="rotulo">Horário</div>
+        <!-- [HORÁRIO AQUI] troque abaixo pelo horário oficial do evento -->
+        <div class="valor">A partir das 18h<small>coquetel de inauguração</small></div>
+      </div>
+      <div class="item full">
+        <div class="rotulo">Local</div>
+        <div class="valor">Rua Ravello, 433NW — Jardim Itália
+          <small>Campo Novo do Parecis - MT</small>
+        </div>
+        <a class="mapa-link" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Rua+Ravello,+433NW,+Jardim+Italia,+Campo+Novo+do+Parecis+-+MT">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Abrir no Google Maps
+        </a>
+      </div>
+    </div>
+
+    <div class="contagem" id="contagem" aria-label="Contagem regressiva para o evento">
+      <div class="bloco-tempo"><b id="cd-d">--</b><span>dias</span></div>
+      <div class="bloco-tempo"><b id="cd-h">--</b><span>horas</span></div>
+      <div class="bloco-tempo"><b id="cd-m">--</b><span>min</span></div>
+      <div class="bloco-tempo"><b id="cd-s">--</b><span>seg</span></div>
+    </div>
+  </section>
+
+  <!-- ================= CONFIRMAÇÃO ================= -->
+  <section class="rsvp" id="confirmar">
+    <h2>Confirme sua presença</h2>
+    <p class="apoio">Preencha seus dados e confirme em segundos direto pelo WhatsApp.</p>
+
+    <div class="campo" id="campo-nome">
+      <label for="nome">Nome completo</label>
+      <input id="nome" type="text" inputmode="text" autocomplete="name" placeholder="Digite seu nome completo" maxlength="80">
+      <div class="msg-erro">Informe seu nome completo.</div>
+    </div>
+
+    <div class="campo" id="campo-fone">
+      <label for="fone">Telefone (WhatsApp)</label>
+      <input id="fone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(66) 99999-9999" maxlength="16">
+      <div class="msg-erro">Informe um telefone válido com DDD.</div>
+    </div>
+
+    <button class="btn-zap" id="btn-confirmar" type="button">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5a1.7 1.7 0 0 0 .3-.4.5.5 0 0 0 0-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.6 14.6 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+      Confirmar presença no WhatsApp
+    </button>
+
+    <div class="sucesso" id="sucesso">✅ Perfeito! Abrimos o WhatsApp para você enviar a confirmação. Até o dia 29/07!</div>
+
+    <p class="nota">Ao confirmar, você será direcionado ao WhatsApp oficial da Agro MT Drones CPN com a mensagem pronta — é só enviar. 🚁</p>
+  </section>
+
+  <footer class="rodape">
+    <b>AGRO MT DRONES CPN</b> · Inovação e tecnologia para o agronegócio<br>
+    Campo Novo do Parecis - MT
+  </footer>
+</main>
+
+<script>
+(function(){
+  /* ================= CONFIGURAÇÃO =================
+     [NÚMERO DO WHATSAPP] e [DATA/HORA DO EVENTO] */
+  var WHATSAPP = "5566997243384"; // +55 66 99724-3384
+  var MENSAGEM = "Olá! Confirmo minha presença na inauguração da Agro MT Drones CPN no dia 29/07. Até lá!";
+  var DATA_EVENTO = new Date(2026, 6, 29, 18, 0, 0); // 29/07/2026 18:00 — [AJUSTE O HORÁRIO AQUI]
+  /* ================================================= */
+
+  var nome = document.getElementById('nome');
+  var fone = document.getElementById('fone');
+  var campoNome = document.getElementById('campo-nome');
+  var campoFone = document.getElementById('campo-fone');
+  var btn = document.getElementById('btn-confirmar');
+  var sucesso = document.getElementById('sucesso');
+
+  /* Máscara de telefone (66) 99999-9999 */
+  fone.addEventListener('input', function(){
+    var v = this.value.replace(/\D/g,'').slice(0,11);
+    if(v.length > 10)      v = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    else if(v.length > 6)  v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+    else if(v.length > 2)  v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+    else if(v.length > 0)  v = v.replace(/(\d{0,2})/, '($1');
+    this.value = v;
+    campoFone.classList.remove('invalido'); fone.classList.remove('erro');
+  });
+  nome.addEventListener('input', function(){
+    campoNome.classList.remove('invalido'); nome.classList.remove('erro');
+  });
+
+  function validar(){
+    var ok = true;
+    var n = nome.value.trim();
+    var digitos = fone.value.replace(/\D/g,'');
+    if(n.length < 3 || n.split(/\s+/).length < 2){
+      campoNome.classList.add('invalido'); nome.classList.add('erro'); ok = false;
+    }
+    if(digitos.length < 10){
+      campoFone.classList.add('invalido'); fone.classList.add('erro'); ok = false;
+    }
+    return ok;
+  }
+
+  btn.addEventListener('click', function(){
+    if(!validar()){
+      (campoNome.classList.contains('invalido') ? nome : fone).focus();
+      return;
+    }
+    var texto = MENSAGEM
+      + "\n\n👤 Nome: " + nome.value.trim()
+      + "\n📱 Telefone: " + fone.value.trim();
+    var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+    sucesso.classList.add('on');
+    window.open(url, '_blank');
+  });
+
+  /* Enter no formulário confirma */
+  [nome, fone].forEach(function(el){
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); btn.click(); }
+    });
+  });
+
+  /* Contagem regressiva */
+  var d=document.getElementById('cd-d'), h=document.getElementById('cd-h'),
+      m=document.getElementById('cd-m'), s=document.getElementById('cd-s');
+  function tick(){
+    var diff = DATA_EVENTO - new Date();
+    if(diff < 0) diff = 0;
+    d.textContent = String(Math.floor(diff/864e5)).padStart(2,'0');
+    h.textContent = String(Math.floor(diff/36e5)%24).padStart(2,'0');
+    m.textContent = String(Math.floor(diff/6e4)%60).padStart(2,'0');
+    s.textContent = String(Math.floor(diff/1e3)%60).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
