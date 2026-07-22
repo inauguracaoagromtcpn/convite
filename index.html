@@ -61,7 +61,7 @@
   /* ===== Topo ===== */
   .topo{
     position:relative;
-    padding:34px 28px 0;
+    padding:34px 28px 30px;
     text-align:center;
   }
   .marca{
@@ -99,49 +99,6 @@
     margin:14px auto 0;max-width:38ch;
     color:var(--texto-suave);font-size:15px;line-height:1.55;
   }
-
-  /* ===== Cena do drone ===== */
-  .cena{
-    position:relative;margin-top:26px;height:300px;overflow:hidden;
-  }
-  .lavoura{
-    position:absolute;inset:0;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.1) 34%, rgba(255,255,255,0) 60%),
-      linear-gradient(180deg, transparent 55%, rgba(5,46,22,.55) 100%),
-      repeating-linear-gradient(100deg, #1c7a3c 0 26px, #2f9a52 26px 52px, #23854420 52px 54px),
-      linear-gradient(180deg,#9fd8b4 0%, #35914f 45%, #14532d 100%);
-    filter:blur(2.5px) saturate(1.05);
-    transform:scale(1.06);
-  }
-  /* ===================================================================
-     [FOTO REAL DO DRONE AQUI]
-     Para usar uma foto real (ex.: DJI Agras T50 sobre a lavoura),
-     substitua a div .lavoura por:
-     <img class="lavoura-foto" src="drone-lavoura.jpg" alt="">
-     e apague o SVG .drone abaixo. O CSS .lavoura-foto já está pronto.
-     =================================================================== */
-  .lavoura-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-  .scan{
-    position:absolute;left:8%;right:8%;top:58%;height:2px;
-    background:linear-gradient(90deg,transparent,var(--lime),transparent);
-    opacity:.85;animation:scan 4.5s ease-in-out infinite;
-  }
-  @keyframes scan{0%,100%{transform:translateY(-26px);opacity:0}12%{opacity:.9}50%{transform:translateY(30px)}88%{opacity:.9}}
-
-  .drone{
-    position:absolute;left:50%;top:34%;width:min(340px,78%);
-    transform:translateX(-50%);
-    filter:drop-shadow(0 26px 22px rgba(5,46,22,.4));
-    animation:flutuar 5s ease-in-out infinite;
-  }
-  @keyframes flutuar{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
-  .helice{transform-origin:center;animation:girar .18s linear infinite}
-  @media (prefers-reduced-motion:reduce){
-    .drone,.scan,.helice{animation:none}
-  }
-  @keyframes girar{to{transform:rotate(360deg)}}
 
   /* ===== Faixa de detalhes ===== */
   .detalhes{
@@ -268,71 +225,12 @@
     <p class="subtitulo">Tecnologia de pulverização agrícola de alta precisão chegando a Campo Novo do Parecis.</p>
   </header>
 
-  <!-- ================= CENA DO DRONE ================= -->
-  <section class="cena" aria-hidden="true">
-    <div class="lavoura"></div>
-    <div class="scan"></div>
-
-    <!-- Ilustração do drone agrícola (substituível por foto real — ver comentário no CSS) -->
-    <svg class="drone" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="corpo" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#2b3530"/><stop offset=".5" stop-color="#121a15"/><stop offset="1" stop-color="#05080a"/>
-        </linearGradient>
-        <linearGradient id="tanque" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f5faf6"/><stop offset="1" stop-color="#c9d6cd"/>
-        </linearGradient>
-        <radialGradient id="brilho" cx=".5" cy=".35" r=".7">
-          <stop offset="0" stop-color="#ffffff" stop-opacity=".8"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <!-- braços -->
-      <path d="M180 92 L60 52 M180 92 L300 52 M180 100 L52 132 M180 100 L308 132" stroke="#1a231d" stroke-width="7" stroke-linecap="round"/>
-      <path d="M180 92 L60 52 M180 92 L300 52" stroke="#3a4a40" stroke-width="2" stroke-linecap="round"/>
-      <!-- motores -->
-      <g fill="#0d1410">
-        <rect x="48" y="42" width="24" height="14" rx="5"/><rect x="288" y="42" width="24" height="14" rx="5"/>
-        <rect x="40" y="122" width="24" height="14" rx="5"/><rect x="296" y="122" width="24" height="14" rx="5"/>
-      </g>
-      <!-- hélices -->
-      <g stroke="#22c55e" stroke-width="3" stroke-linecap="round" opacity=".9">
-        <line class="helice" x1="18" y1="44" x2="102" y2="44"/>
-        <line class="helice" x1="258" y1="44" x2="342" y2="44"/>
-        <line class="helice" x1="10" y1="124" x2="94" y2="124"/>
-        <line class="helice" x1="266" y1="124" x2="350" y2="124"/>
-      </g>
-      <g stroke="#dcfce7" stroke-width="1.4" opacity=".55">
-        <ellipse cx="60" cy="44" rx="46" ry="6" fill="none"/>
-        <ellipse cx="300" cy="44" rx="46" ry="6" fill="none"/>
-        <ellipse cx="52" cy="124" rx="46" ry="6" fill="none"/>
-        <ellipse cx="308" cy="124" rx="46" ry="6" fill="none"/>
-      </g>
-      <!-- tanque -->
-      <ellipse cx="180" cy="118" rx="46" ry="30" fill="url(#tanque)" stroke="#9fb3a6" stroke-width="1.5"/>
-      <ellipse cx="180" cy="112" rx="34" ry="16" fill="url(#brilho)"/>
-      <!-- corpo -->
-      <rect x="138" y="72" width="84" height="34" rx="14" fill="url(#corpo)"/>
-      <rect x="150" y="79" width="60" height="8" rx="4" fill="#16a34a" opacity=".85"/>
-      <circle cx="180" cy="96" r="4" fill="#4ade80"/>
-      <!-- bicos de pulverização -->
-      <g stroke="#16a34a" stroke-width="2.4" stroke-linecap="round">
-        <line x1="120" y1="150" x2="120" y2="162"/><line x1="160" y1="156" x2="160" y2="168"/>
-        <line x1="200" y1="156" x2="200" y2="168"/><line x1="240" y1="150" x2="240" y2="162"/>
-      </g>
-      <!-- névoa de pulverização -->
-      <g fill="#4ade80" opacity=".35">
-        <ellipse cx="120" cy="176" rx="16" ry="5"/><ellipse cx="160" cy="182" rx="18" ry="5"/>
-        <ellipse cx="200" cy="182" rx="18" ry="5"/><ellipse cx="240" cy="176" rx="16" ry="5"/>
-      </g>
-    </svg>
-  </section>
-
   <!-- ================= DETALHES ================= -->
   <section class="detalhes">
     <div class="grade">
       <div class="item">
         <div class="rotulo">Data</div>
-        <div class="valor">29 de julho<small>terça-feira</small></div>
+        <div class="valor">29 de julho<small>quarta-feira</small></div>
       </div>
       <div class="item">
         <div class="rotulo">Horário</div>
@@ -345,7 +243,7 @@
           <small>Campo Novo do Parecis - MT</small>
         </div>
         <a class="mapa-link" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/place/Agro+MT+Drones+Campo+Novo+do+Parecis/@-13.6297528,-57.9407186,14z/data=!4m10!1m2!2m1!1sR.+Ravello+italia+-+Campo+Novo+do+Parecis!3m6!1s0x93a2effd1ce39ed5:0x38e4600bd6ba09b9!8m2!3d-13.6297528!4d-57.9026098!15sCilSLiBSYXZlbGxvIGl0YWxpYSAtIENhbXBvIE5vdm8gZG8gUGFyZWNpc1ooIiZyIHJhdmVsbG8gaXRhbGlhIGNhbXBvIG5vdm8gZG8gcGFyZWNpc5IBCmRyb25lX3Nob3CaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnRTWVZwclVrdGxibEozWTBkek1WZFliSGRqUm04d1pVZG9WRTFyUlJBQuABAPoBBQjVARBC!16s%2Fg%2F11z8r63g3s?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D">
+           href="https://www.google.com/maps/search/?api=1&query=Rua+Ravello,+433NW,+Jardim+Italia,+Campo+Novo+do+Parecis+-+MT">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           Abrir no Google Maps
         </a>
